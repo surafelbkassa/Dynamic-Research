@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Analytics Dashboard</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" data-tab="overview"><span class="material-icons">dashboard</span> Dashboard Overview</a></li>
+                    <li><a href="#" data-tab="topics"><span class="material-icons">topic</span> Research Topics</a></li>
+                    <li><a href="#" data-tab="funding"><span class="material-icons">bar_chart</span> Funding Analysis</a></li>
+                    <li><a href="#" data-tab="map"><span class="material-icons">public</span> Country Data</a></li>
+                </ul>
+            </nav>
+            <button id="toggle-theme">Toggle Dark/Light Mode</button>
+        </aside>
+        <main class="content">
+            <div id="overview" class="tab active">
+                <h1>Dashboard Overview</h1>
+                <div class="metrics-grid">
+                    <div class="card">Loading...</div>
+                    <div class="card">Loading...</div>
+                    <div class="card">Loading...</div>
+                </div>
+            </div>
+            <div id="topics" class="tab">
+                <h1>Research Topics</h1>
+                <table id="topics-table">
+                    <!-- Table content will be dynamically generated -->
+                </table>
+            </div>
+            <div id="funding" class="tab">
+                <h1>Funding Analysis</h1>
+                <div class="charts-grid">
+                    <canvas id="funding-chart"></canvas>
+                    <canvas id="categories-chart"></canvas>
+                </div>
+            </div>
+            <div id="map" class="tab">
+                <h1>Country Data</h1>
+                <div id="map-container"></div>
+            </div>
+        </main>
+        <div class="export-dropdown">
+            <button id="export-button">Export</button>
+            <ul id="export-options">
+                <li data-format="pdf">Export as PDF</li>
+                <li data-format="csv">Export as CSV</li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/pdf-export.js"></script>
+</body>
+</html>
